@@ -1,0 +1,40 @@
+
+același fișier dar fără comentarii. Practic, programul va elimina comentariile din fișierul C primit prin redirectare de stdin și va printa
+ rezultatul la stdout *
+
+#include <stdio.h>
+
+
+int main()
+{
+  char c = 0, aux = 0;
+  while ((c = getchar()) != EOF)
+    {
+      if ((c == '
+	aux = '
+      if ((c == '
+	{
+	  while ((c = getchar()) != '\n')
+	    ;
+	  aux = 0;
+	}
+      if ((aux == '
+	{
+	  putchar(aux);
+	  aux = 0;
+	  putchar(c);
+	}
+      if ((c == '*') && (aux == '
+	{
+	  do
+	    {
+	      aux = c;
+	      c = getchar();
+	    } while ((aux != '*') && (c != '
+	  aux = 0;
+	}
+      if (c != '
+	putchar(c);
+    }
+  return 0;
+}
